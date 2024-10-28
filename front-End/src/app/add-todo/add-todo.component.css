@@ -1,0 +1,74 @@
+/* Styles for the outer div */
+.outer-div {
+  background-color: rgb(88, 167, 237);
+  color: #fff;
+  font-family: "Caveat", cursive;
+
+padding: 10px;
+}
+  
+
+/* Styles for the form */
+form {
+  width: 600px;
+  margin: 10px auto;
+  padding: 10px;
+  border: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.645);
+  background-image: url("../../assets/images/background.jpg");
+}
+p{
+  text-decoration: underline;
+  padding: 10px;
+  font-size: 22px;
+font-weight: bolder;
+}
+
+/* Styles for the form elements */
+.form-group {
+  margin-bottom: 20px;
+ 
+}
+
+label {
+  font-weight: bold;
+  font-family: "Caveat", cursive;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: "Caveat", cursive;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Styles for the task completed checkbox */
+.taskcompleted {
+  margin-top: 10px;
+}
+
+/* Styles for the submit button */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+    
+   

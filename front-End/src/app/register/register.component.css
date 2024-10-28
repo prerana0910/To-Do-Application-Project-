@@ -1,0 +1,103 @@
+
+
+  .signin-container {
+    background-image: url('../../assets/images/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 82.4vh;
+    padding-top: 4rem;
+  }
+  
+  .form-container {
+    background-color: #cdd8e5; /* Light Blue */
+    
+  width: 550px;
+  margin: auto;
+  padding: 15px 10px;
+  text-align: center;
+  margin-top: 5px; /*Adjust as needed for vertical centering*/
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+  margin-bottom: 5px;
+  }
+  .form-container h2 {
+    font-family: "futura Display";
+    width: 100%;
+    font-weight: bolder;
+    
+    font-size: 1.8rem;
+  }
+  
+  mat-form-field {
+    width: 80%;
+    /* margin-bottom: 5px; */
+  /* font-weight: 800; */
+  margin-left: 15px;
+  margin-bottom: 5px;
+  font-family: "Caveat", cursive;
+  
+  }
+  
+  mat-label {
+    font-weight: bold;
+    font-family: "Caveat", cursive;
+  }
+  
+  mat-error {
+    color: #d32f2f; /* Red */
+    font-size: 12px;
+    
+  }
+  
+  button[type="submit"] {
+    margin-top: 15px;
+    /* background-color: #364aad; Blue */
+    color: #ffffff; /* White */
+  }
+  .input-fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    margin-top: 15px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #1565c0; /* Darker Blue */
+  }
+  .image-section {
+  width: 100%;
+  height: 200px;
+  margin-top: -10px;
+}
+.imagePreview {
+  width: 150px;
+  height: 150px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 2px solid black;
+  margin: auto;
+  border-radius: 50%;
+}
+.imagePreview img {
+  height: 150px;
+  width: 150px;
+}
+mat-error {
+  font-size: 0.8rem;
+}
+  .clickhere {
+    text-align: center;
+   
+    font-size: 14px;
+  }
+  
+  .link {
+    color: #1e88e5; /* Blue */
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  

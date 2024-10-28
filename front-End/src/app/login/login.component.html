@@ -1,0 +1,47 @@
+<div class="loginForm">
+    <mat-card class="loginForm-form-container">
+        <mat-card-header>
+            <mat-card-title>
+                <h2 class="formName">LOGIN FORM</h2>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+
+
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <mat-form-field>
+                    <mat-label>Email Id</mat-label>
+
+                    <input matInput type type="text" placeholder="Email Id *" formControlName="userEmail"
+                        id="userEmail">
+                    <mat-error
+                        *ngIf="loginForm.get('userEmail')?.hasError('required') && loginForm.get('userEmail')?.touched">
+                        Email-Id is Required
+                    </mat-error>
+
+                    <mat-error *ngIf="loginForm.get('userEmail')?.hasError('email')">
+                        Invalid Email Address
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+
+                    <input matInput type="password" placeholder="Password *" formControlName="password" id="password">
+                    <mat-error
+                        *ngIf="loginForm.get('password')?.hasError('required') &&loginForm.get('password')?.touched">
+                        Password is Required
+                    </mat-error>
+                    <mat-error *ngIf="loginForm.get('password')?.hasError('minLength')">
+                        Minimum Required length is 8
+                    </mat-error>
+                </mat-form-field>
+
+
+                <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">login</button>
+                <br>
+                <br>
+                <h3 class="clickhere">Don't Have an Account? <a routerLink="/register" class="link">Click Here</a></h3>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

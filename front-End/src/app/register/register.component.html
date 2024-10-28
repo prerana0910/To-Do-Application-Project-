@@ -1,0 +1,78 @@
+
+<div class="signin-container">
+    <div class="form-container">
+   
+        
+<h2 class = "formName">REGISTER</h2>
+<div class="image-section">
+                
+    <div class="imagePreview">
+        <img src="../../assets/userLogo.jpg" alt="happy">
+    </div>
+    </div>
+
+
+<mat-card-content>
+        
+    <form [formGroup]="userRegistrationForm" (ngSubmit)="onSubmit()">
+        <div class="input-fields">
+        <mat-form-field appearance="outline">
+        <mat-label >Email Id</mat-label>
+        <input matInput type = "text" placeholder = "userEmail*" formControlName = "userEmail" id = "userEmail">
+        
+        <mat-error *ngIf = "userRegistrationForm.get('userEmail')?.hasError('required') && userRegistrationForm.get('userEmail')?.touched">
+            Email-Id is Required
+        </mat-error>
+        <mat-error *ngIf = "userRegistrationForm.get('userEmail')?.hasError('email')">
+            Invalid Email Address
+        </mat-error>
+        <mat-error *ngIf = "userRegistrationForm.get('userEmail')?.hasError('pattern')">
+         must be three letters before anotation
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label >UserName</mat-label>
+        <input matInput type = "text" placeholder = "userName*" formControlName = "userName" id = "userName">
+        <mat-error *ngIf="userRegistrationForm.get('userName')?.hasError('required') && userRegistrationForm.get('userName')?.touched">
+            UserName is Required
+        </mat-error>
+</mat-form-field>
+<mat-form-field appearance="outline">
+    <mat-label >Password</mat-label>
+        <input matInput type = "password" placeholder = "Password *" formControlName = "password" id = "password">
+        <mat-error *ngIf = "userRegistrationForm.get('password')?.hasError('required') && userRegistrationForm.get('password')?.touched">
+            Password is Required
+        </mat-error>
+        <mat-error *ngIf = "userRegistrationForm.get('password')?.hasError('minLength')">
+            Minimum Required length is 8
+        </mat-error>
+        <!-- <mat-error *ngIf = "userRegistrationForm.get('password')?.hasError('pattern')">
+           Strong Password Required
+        </mat-error> -->
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label >Phone Number</mat-label>
+        <input matInput type = "text" placeholder = "Mobile Number *" formControlName = "phoneNo" id = "phoneNo">
+        <mat-error *ngIf = "userRegistrationForm.get('phoneNo')?.hasError('required') && userRegistrationForm.get('phoneNo')?.touched">
+            Mobile Number is Required
+        </mat-error>
+        <mat-error *ngIf = "userRegistrationForm.get('phoneNo')?.hasError('pattern')">
+            Mobile must contain only Numeric
+        </mat-error>
+        <mat-error *ngIf = "userRegistrationForm.get('phoneNo')?.hasError('minLength')">
+            Required length is 10
+        </mat-error>
+        </mat-form-field>
+    </div>
+        <div class="final-btn">
+        
+ <button mat-raised-button color="primary" type = "submit" [disabled]="!userRegistrationForm.valid" >Register</button>
+        </div>
+    
+</form>
+<br>
+        <p class = "clickhere">Already Have an Account? <a routerLink = "/login" class = "link">Click Here</a></p>
+   
+</mat-card-content>
+</div>
+</div>

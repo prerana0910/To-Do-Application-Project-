@@ -1,0 +1,60 @@
+<div class="ouer-div">
+  <form [formGroup]="editTaskForm" (ngSubmit)="onSubmit()">
+    <h1>Edit Your Task</h1>
+
+    <div class="form-group">
+      <label for="taskName">Task Name</label>
+      <input type="text" class="form-control" id="taskName" formControlName="taskName" placeholder="Enter task name" required [readonly]="true">
+    </div>
+
+    <div class="form-group">
+      <label for="taskDescription">Task Description</label>
+      <textarea class="form-control" id="taskDescription" formControlName="taskDescription" rows="3"
+        placeholder="Enter task description"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="taskDate">Task Date</label>
+      <input type="date" class="form-control" id="taskDate" formControlName="taskDate" required [readonly]="true">
+    </div>
+
+    <div class="form-group">
+      <label for="taskStartTime">Task Start Time</label>
+      <input type="time" class="form-control" id="taskStartTime" formControlName="taskStartTime" required>
+    </div>
+
+    <div class="form-group">
+      <label for="taskDueTime">Task Due Time</label>
+      <input type="time" class="form-control" id="taskDueTime" formControlName="taskDueTime" required>
+    </div>
+
+
+    <div class="form-group">
+      <label for="repeatType">Repeat Type</label>
+      <select class="form-control" id="repeatType" formControlName="repeatType">
+        <option value="">Don't Repeat</option>
+        <option value="Daily">Daily</option>
+        <option value="Weekly">Weekly</option>
+        <option value="Monthly">Monthly</option>
+      </select>
+    </div>
+
+
+    <div class="form-group">
+      <label for="repeatEndDate">Repeat End Date</label>
+      <input type="date" class="form-control" id="repeatEndDate" formControlName="repeatEndDate">
+    </div>
+
+
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="ishighPriority" formControlName="ishighPriority">
+      <label class="form-check-label" for="ishighPriority">High Priority</label>
+    </div>
+
+    <div class="taskcompleted">
+      <input type="checkbox" class="form-check-input" id="iscompleted" formControlName="iscompleted" (change)="toggleCompletionStatus($event)" required [readonly]="true">
+      <label class="form-check-label" for="iscompleted">Mark as Completed</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Task</button>
+  </form>
+</div>

@@ -1,0 +1,56 @@
+.loginForm-form-container {
+    background-color: #cdd8e5;
+    padding-top: 4rem;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px; /* Add padding to the container */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+}
+.loginForm{
+    background-image: url('../../assets/images/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 82.4vh;
+    padding-top: 4rem;
+
+}
+h2{
+    font-family: "Signika", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    width: 100%;
+    font-weight: bolder;
+    font-size: 1.8rem;
+    text-align: center;
+}
+mat-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Add some spacing to form fields */
+mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Style the login button */
+button[type="submit"] {
+    width: 100%;
+}
+
+/* Adjust font size for better readability on smaller screens */
+mat-label, input, button {
+    font-size: 14px;
+    font-family: "Caveat", cursive;
+}
+
+/* Optional: Add media query for responsiveness */
+@media (max-width: 1366px) {
+    .login-form-container {
+        max-width: 90%; /* Adjust the max-width for smaller screens */
+    }
+}

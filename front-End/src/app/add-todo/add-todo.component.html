@@ -1,0 +1,118 @@
+<div class="outer-div">
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="form-container">
+    <p>PLAN YOUR DAY AND BE MORE PRODUCTIVE</p>
+    <div class="form-group">
+      
+      
+    
+    <div class="form-group">
+      <label for="taskName">Task Name</label>
+      <input type="text" class="form-control" id="taskName" formControlName="taskName" placeholder="Enter task name" required >
+    </div>
+
+    <div class="form-group">
+      <label for="taskDescription">Task Description</label>
+      <textarea class="form-control" id="taskDescription" formControlName="taskDescription" rows="3"
+        placeholder="Enter task description"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="taskDate">Task Date</label>
+      <input type="date" class="form-control" id="taskDate" [min]="minDate | date: 'yyyy-MM-dd'" formControlName="taskDate" >
+    </div>
+
+    <div class="form-group">
+      <label for="taskStartTime">Task Start Time</label>
+      <input type="time" class="form-control" id="taskStartTime" formControlName="taskStartTime" required>
+    </div>
+
+    <div class="form-group">
+      <label for="taskDueTime">Task Due Time</label>
+      <input type="time" class="form-control" id="taskDueTime" formControlName="taskDueTime" required>
+    </div>
+
+
+    <div class="form-group" *ngIf="taskForm.get('taskDate')?.value && taskForm.get('repeatEndDate')?.value">
+      <label for="repeatType">Repeat Type</label>
+      <select class="form-control" id="repeatType" formControlName="repeatType">
+        <option value="">Don't Repeat</option>
+        <option value="Daily">Daily</option>
+        <option value="Weekly">Weekly</option>
+        <option value="Monthly">Monthly</option>
+      </select>
+    </div>
+
+
+    <div class="form-group">
+      <label for="repeatEndDate">Repeat End Date</label>
+      <input type="date" class="form-control" id="repeatEndDate" [min]="taskForm.get('taskDate')?.value | date: 'yyyy-MM-dd'" formControlName="repeatEndDate">
+    </div>
+
+
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="ishighPriority" formControlName="ishighPriority">
+      <label class="form-check-label" for="ishighPriority">High Priority</label>
+    </div>
+
+    
+    <button mat-raised-button type="submit" color="primary" [disabled]="!taskForm.valid">Save Task</button>
+    </div>
+  </form>
+</div>
+<!-- <mat-form-field appearance="fill">
+        <mat-label>Task Name</mat-label>
+        <input matInput type="text" formControlName="taskName" placeholder="Enter task name" required>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>Task Description</mat-label>
+        <textarea matInput formControlName="taskDescription" rows="3" placeholder="Enter task description"></textarea>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>Task Date</mat-label>
+        <input matInput type="date" formControlName="taskDate" required>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>Task Start Time</mat-label>
+        <input matInput type="time" formControlName="taskStartTime" required>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>Task Due Time</mat-label>
+        <input matInput type="time" formControlName="taskDueTime" required>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group" *ngIf="taskForm.get('taskDate')?.value && taskForm.get('repeatEndDate')?.value">
+      <mat-form-field appearance="fill">
+        <mat-label>Repeat Type</mat-label>
+        <mat-select formControlName="repeatType">
+          <mat-option value="">Don't Repeat</mat-option>
+          <mat-option value="Daily">Daily</mat-option>
+          <mat-option value="Weekly">Weekly</mat-option>
+          <mat-option value="Monthly">Monthly</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>Repeat End Date</mat-label>
+        <input matInput type="date" formControlName="repeatEndDate">
+      </mat-form-field>
+    </div>
+
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="ishighPriority" formControlName="ishighPriority">
+      <mat-label class="form-check-label" for="ishighPriority">High Priority</mat-label>
+    </div> -->

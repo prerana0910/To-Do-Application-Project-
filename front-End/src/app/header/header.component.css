@@ -1,0 +1,37 @@
+.sidenav-container {
+  height: 100%;
+}
+.link{
+  text-decoration: none;
+  color: #fff;
+}
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.mat-toolbar {
+  background-image: url("../../assets/images/background.jpg");
+}
+.icon {
+
+  color: aliceblue;
+
+  display: flex;
+  position: absolute;
+  right: 1rem;
+ 
+
+}
+.icons{
+  justify-content: space-around;
+  padding-left: 25px;
+}

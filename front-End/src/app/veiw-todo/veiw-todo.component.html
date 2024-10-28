@@ -1,0 +1,119 @@
+<div class="viewForm">
+  <div class="grid-container">
+    <h1 class="mat-h1">Navigate Your Day, One Task at a Time: Welcome to Your Personal Productivity Hub!</h1>
+    <mat-grid-list cols="4">
+      <ng-container *ngIf="filteredTodo.length === 0">
+        <mat-card class="no-task-card" >
+          <mat-card-content>
+            <p>No task available right now</p>
+          </mat-card-content>
+        </mat-card>
+      </ng-container>
+      <ng-container *ngIf="filteredTodo.length > 0">
+      <mat-grid-tile *ngFor="let todos of filteredTodo" (click)="setTaskName(todos.taskName)">
+        <mat-card class="example-card" [ngClass]="{'high-priority': todos.ishighPriority}">
+          <mat-card-header>
+            <mat-card-title>
+              Title: {{todos.taskName}}
+            </mat-card-title>
+            <mat-card-subtitle>
+              <p>Description: {{todos.taskDescription}} </p>
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Date: {{todos.taskDate}} - {{todos.repeatEndDate}}</p>
+            <p>Time: {{todos.taskStartTime}} - {{todos.taskDueTime}}</p>
+          </mat-card-content>
+          <div class="button-container">
+            <button mat-button (click)="editTask(todos.taskName)">
+              <mat-icon style="color: #ff2739">create</mat-icon>
+              Edit
+            </button>
+            <button mat-button (click)="deleteTask(todos.taskName)">
+              <mat-icon style="color: #6ecafc">delete</mat-icon>
+              Delete
+            </button>
+
+          </div>
+          <button *ngIf="!todos.iscompleted" mat-button (click)="markAsCompleted(todos.taskName)">
+            <mat-icon style="color: #08a6f8">check_circle</mat-icon>
+            Mark as Completed
+          </button>
+          <!-- <button mat-button (click)="toggleArchiveStatus(todos)">
+              <mat-icon style="color: #000000">archive</mat-icon>
+              {{ todos.isarchived ? 'Unarchive' : 'Archive' }}
+            </button> -->
+          <!-- <button mat-button (click)="toggleArchiveStatus(todos)">
+            {{ todos.isarchived ? 'Unarchive' : 'Archive' }}
+          </button> -->
+        </mat-card>
+        
+      </mat-grid-tile>
+    </ng-container>
+
+    </mat-grid-list>
+    <button class="show-archive-button" (click)="toggleArchivedTasks()">
+      {{ showArchivedTasks ? 'Hide compeleted Tasks' : 'Show compeleted Tasks' }}
+    </button>
+    <!-- <mat-grid-list cols="4">
+      Archived Tasks Section -->
+    <!-- <div *ngIf="showArchivedTasks">
+        <div *ngFor="let task of archivedTasks">
+          Display archived task details -->
+    <!-- <mat-card class="example-card" style="width: 600px;">
+            <mat-card-header>
+              <mat-card-title>Title: {{task.taskName}}</mat-card-title>
+              <mat-card-subtitle>Description: {{task.taskDescription}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>StartDate: {{task.taskDate}} - EndDate{{task.repeatEndDate}}</p>
+              <p>StartTime: {{task.taskStartTime}} - EndTime{{task.taskDueTime}}</p>
+            </mat-card-content>
+            <button mat-button (click)="deleteTask(task.taskName)">
+              <mat-icon style="color: #08a6f8">delete</mat-icon>Delete
+            </button>
+            <button mat-button (click)="editTask(task.taskName)">
+              <mat-icon style="color: #ff2739">create</mat-icon>Edit
+            </button>
+            <button mat-button (click)="toggleArchiveStatus(task)">
+              {{ task.isarchived ? 'Unarchive' : 'Archive' }}
+            </button> -->
+    <!-- Other archived task details -->
+    <!-- </mat-card>
+          Other archived task details -->
+    <!-- </div>
+         Button to toggle visibility of hidden completed tasks -->
+    <!-- </div>
+    </mat-grid-list>  -->
+    <div *ngIf="showArchivedTasks">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Is Completed?</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of archivedTasks">
+            <td>{{task.taskName}}</td>
+            <td>{{task.description}}</td>
+            <td>{{task.taskDate | date | uppercase}}</td>
+            <td>{{task.repeatEndDate | date | uppercase}}</td>
+            <td>{{task.taskStartTime}}</td>
+            <td>{{task.taskDueTime}}</td>
+            <td>{{task.iscompleted}}</td>
+            <td><button (click)="editTask(task.taskName)" class="btn btn-success">Update</button></td>
+            <td><button (click)="deleteTask(task.taskName)" class="btn btn-warning">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

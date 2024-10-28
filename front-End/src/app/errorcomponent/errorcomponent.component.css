@@ -1,0 +1,41 @@
+/* .error{
+    background-image: url("../../assets/images/7.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat-y;
+    height: 88vh;
+} */
+.custom-card {
+    width: 400px; 
+    margin: 150px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #9dd5ff; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    height: 300px;
+}
+
+.custom-title {
+    font-size: 24px;
+    color: #333; 
+    margin-bottom: 10px;
+}
+
+.custom-subtitle {
+    margin-top: 20px;
+}
+
+.custom-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: #fff; 
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; 
+}
+
+.custom-link:hover {
+    background-color: #0056b3; 
+}

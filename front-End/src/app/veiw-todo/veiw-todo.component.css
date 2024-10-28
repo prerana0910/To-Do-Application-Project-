@@ -1,0 +1,156 @@
+.viewForm {
+  background-color: rgb(88, 167, 237); 
+  color: #f5e7fd;/* Light blue background color */
+  font-family: "Caveat", cursive; /* Use Arial font family */
+  padding: 20px;
+}
+/* .mat-h1{
+  font-family: "Caveat", cursive;
+  font-weight: 400;
+  font-style: normal;
+  width: 100%;
+  font-weight: bolder;
+  font-size: 1.8rem;
+  text-align: center;
+  color:rgb(249, 242, 229) ;
+} */
+
+/* .grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+   gap: 20px; 
+} */
+mat-card-title{
+  font-family: "Caveat", cursive;
+  font-weight: 400;
+  font-style: normal;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-align: center;
+  
+}
+.example-card {
+  background-color: #f5e7fd; /* White card background color */
+  color:black;
+  font-family: "Caveat", cursive;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.852); /* Box shadow for card */
+  transition: transform 0.3s ease-in-out; /* Add transition effect */
+  text-align: justify; ;
+  padding: 20px;
+  width: 400px;
+  margin: 10px;
+}
+p{
+  color:black;
+  font-family: "Caveat", cursive;
+}
+
+.example-card:hover {
+  transform: scale(1.05); /* Scale the card on hover */
+}
+
+.show-archive-button {
+  background-color: #4CAF50; /* Green button background color */
+  color: white; /* Text color */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.show-archive-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.mat-button {
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif; /* Use Roboto font family for buttons */
+  background-color: #007bff; /* Blue button background color */
+  color: white; /* Text color */
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.mat-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.mat-icon {
+  margin-right: 5px; /* Adjust the space between icon and button text */
+}
+
+/* Styling for archived tasks section */
+.archived-task-section {
+  margin-top: 20px;
+}
+
+/* Add more CSS rules as needed */
+.button-container {
+  display: flex;
+  align-items: center;
+}
+
+.button-container button {
+  display: flex;
+  align-items: center;
+  margin-right: 10px; /* Add margin between buttons */
+}
+
+.button-container button mat-icon {
+  margin-right: 45px; /* Add margin between icon and button text */
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  font-family: "Caveat", cursive;
+color: white;
+}
+
+.table th {
+  
+  text-align: left;
+}
+
+.table tr:hover {
+  background-color: #ffb7b7;
+}
+
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-success {
+  background-color: #5cb85c;
+  color: white;
+}
+
+.btn-warning {
+  background-color: #f0ad4e;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #d9534f;
+  color: white;
+}
+.high-priority {
+  font-family: "Caveat", cursive;
+  background-color: rgb(255, 163, 163);
+  /* color: white; */
+}
